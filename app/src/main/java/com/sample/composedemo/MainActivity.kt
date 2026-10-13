@@ -8,6 +8,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Slider
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -15,6 +16,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.sample.composedemo.ui.theme.ComposeDemoTheme
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
 
 class MainActivity : ComponentActivity() {
     @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -45,4 +47,14 @@ fun DemoTextPreview() {
     ComposeDemoTheme {
         DemoText(message = "Welcome to Android", fontSize = 12f)
     }
+}
+
+@Composable
+fun DemoSlider(sliderPosition: Float, onPositionChange: (Float) -> Unit ) {
+    Slider(
+        modifier = Modifier.padding(10.dp),
+        valueRange = 20f..38f,
+        value = sliderPosition,
+        onValueChange = { onPositionChange(it)}
+    )
 }
