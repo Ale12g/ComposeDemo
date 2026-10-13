@@ -13,6 +13,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.sample.composedemo.ui.theme.ComposeDemoTheme
+import androidx.compose.ui.unit.sp
+import androidx.compose.ui.text.font.FontWeight
 
 class MainActivity : ComponentActivity() {
     @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -30,5 +32,10 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun DemoText(message: String, fontSize: Float) {
+    Text(
+        text = message,
+        fontSize = fontSize.sp,
+        fontWeight = FontWeight.Bold
+    )
 }
 
